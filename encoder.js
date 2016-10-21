@@ -41,28 +41,28 @@ $("input[type='radio']").click(function() {
 });
 
 //Follows which button is checked and uses the code needed
-if ($("input:checked").val() == "echo") {
+if ($("input:checked").val() == "Echo") {
 
   $("#inputArea").keydown(function() {
 
-    $("#textArea").append("A");
+    var userInput = $("inputArea").val();
+
+    $("#textArea").append(userInput);
 
   });
 
 }
 
-else if ($("input:checked").val() == "Caeser Cipher") {
+else if ($("input:checked").val() == "Caeser_Cipher") {
   $("#inputArea").keydown(function() {
 
-    var Encode = String.fromCharCode(event.which);
+    var Encode = $("inputArea").val();
 
-    var Endcoder = Encode.split('');
+    var Endcoder = Encode.split("");
 
-    var Encoded;
+    var Encoded = CaeserCipherConversion[Encoder[0]];
 
-    Encoded = CaeserCipherConversion[Encoder[0]];
-
-    $("#textArea").append("Encoded");
+    $("#textArea").append(Encoded);
 
   });
 
